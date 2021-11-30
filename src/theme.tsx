@@ -1,12 +1,24 @@
 import { extendTheme } from 'native-base'
+import { DefaultTheme, DarkTheme, Theme } from '@react-navigation/native'
 
-const theme = extendTheme({
+const twitterBlue = '#1d9bf0'
+
+export const nativeBaseTheme = extendTheme({
   useSystemColorMode: true,
   colors: {
     singletons: {
-      twitterBlue: '#1d9bf0'
+      twitterBlue
     }
   }
 })
 
-export default theme
+export const navigatorTheme = {
+  dark: {
+    ...DarkTheme,
+    primary: twitterBlue
+  },
+  light: {
+    ...DefaultTheme,
+    primary: twitterBlue
+  }
+}

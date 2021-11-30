@@ -1,12 +1,12 @@
 import React from 'react'
 import { View, Text } from 'native-base'
 
-const UserGeneral = () => {
+const Messages = () => {
   return (
     <View>
-      <Text>Hallo UserGeneral</Text>
+      <Text>Hallo Messages</Text>
     </View>
   )
 }
 
-export default UserGeneral
+export default Messages

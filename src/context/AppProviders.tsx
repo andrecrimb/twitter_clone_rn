@@ -1,8 +1,8 @@
 import React, { PropsWithChildren } from 'react'
 import { NativeBaseProvider } from 'native-base'
 import { QueryClient, QueryClientProvider } from 'react-query'
-import theme from '../theme'
-import { NavigationContainer } from '@react-navigation/native'
+import { nativeBaseTheme } from '../theme'
+import NavigationContainerWithTheme from './NavigationContainerWithTheme'
 
 //* setup dayjs
 import dayjs from 'dayjs'
@@ -32,8 +32,10 @@ const AppProviders: React.FC<PropsWithChildren<Props>> = ({
 }) => {
   return (
     <QueryClientProvider client={queryClient}>
-      <NativeBaseProvider theme={theme} initialWindowMetrics={nativeBaseInitialWindowMetrics}>
-        <NavigationContainer>{children}</NavigationContainer>
+      <NativeBaseProvider
+        theme={nativeBaseTheme}
+        initialWindowMetrics={nativeBaseInitialWindowMetrics}>
+        <NavigationContainerWithTheme>{children}</NavigationContainerWithTheme>
       </NativeBaseProvider>
     </QueryClientProvider>
   )
