@@ -7,38 +7,54 @@ import SearchStackScreen from './src/navigators/SearchStackScreen'
 import NotificationsStackScreen from './src/navigators/NotificationsStackScreen'
 import MessagesStackScreen from './src/navigators/MessagesStackScreen'
 import UserMenuStackScreen from './src/navigators/UserMenuStackScreen'
-import { Feather } from '@expo/vector-icons'
 import UserAvatar from './src/components/UserAvatar'
+import { useTheme } from '@react-navigation/native'
+import AppTabIcon from './src/components/AppTabIcon'
 
 const Tab = createBottomTabNavigator()
 
 export default function App() {
+  const { colors } = useTheme()
+
   return (
     <AppProviders>
       <AuthNavigatorFlow>
-        <Tab.Navigator screenOptions={{ headerShown: false, tabBarShowLabel: false }}>
+        <Tab.Navigator
+          screenOptions={{
+            headerShown: false,
+            tabBarShowLabel: false,
+            tabBarInactiveTintColor: colors.text
+          }}>
           <Tab.Screen
-            name="Home"
+            name="Tab Home"
             component={HomeStackScreen}
-            options={{ tabBarIcon: p => <Feather name="home" size={p.size} color={p.color} /> }}
+            options={{
+              tabBarIcon: p => <AppTabIcon name="home" size={p.size} focused={p.focused} />
+            }}
           />
           <Tab.Screen
-            name="Search"
+            name="Tab Search"
             component={SearchStackScreen}
-            options={{ tabBarIcon: p => <Feather name="search" size={p.size} color={p.color} /> }}
+            options={{
+              tabBarIcon: p => <AppTabIcon name="search" size={p.size} focused={p.focused} />
+            }}
           />
           <Tab.Screen
-            name="Notifications"
+            name="Tab Notifications"
             component={NotificationsStackScreen}
-            options={{ tabBarIcon: p => <Feather name="bell" size={p.size} color={p.color} /> }}
+            options={{
+              tabBarIcon: p => <AppTabIcon name="bell" size={p.size} focused={p.focused} />
+            }}
           />
           <Tab.Screen
-            name="Messages"
+            name="Tab Messages"
             component={MessagesStackScreen}
-            options={{ tabBarIcon: p => <Feather name="mail" size={p.size} color={p.color} /> }}
+            options={{
+              tabBarIcon: p => <AppTabIcon name="mail" size={p.size} focused={p.focused} />
+            }}
           />
           <Tab.Screen
-            name="UserMenu"
+            name="Tab UserMenu"
             component={UserMenuStackScreen}
             options={{ tabBarIcon: p => <UserAvatar /> }}
           />

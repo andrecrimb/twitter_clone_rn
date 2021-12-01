@@ -12,13 +12,19 @@ export const nativeBaseTheme = extendTheme({
   }
 })
 
-export const navigatorTheme = {
+export const navigatorTheme: { dark: Theme; light: Theme } = {
   dark: {
     ...DarkTheme,
-    primary: twitterBlue
+    colors: {
+      ...DarkTheme.colors,
+      primary: twitterBlue
+    }
   },
   light: {
     ...DefaultTheme,
-    primary: twitterBlue
+    colors: {
+      ...DefaultTheme.colors,
+      primary: twitterBlue
+    }
   }
 }
