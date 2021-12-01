@@ -1,1 +1,9 @@
-{}
+{
+  "email_or_username": "Email or username",
+  "password": "Password",
+  "search": "Search",
+  "notifications": "Notifications",
+  "user_settings": "User settings",
+  "login": "Login",
+  "enter_email_username_password": "Enter your email or username and password"
+}

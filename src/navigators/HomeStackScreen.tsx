@@ -2,7 +2,7 @@ import React from 'react'
 import { createNativeStackNavigator } from '@react-navigation/native-stack'
 import HomeScreen from '../screens/Home'
 import { useTheme } from 'native-base'
-import { Ionicons, Feather } from '@expo/vector-icons'
+import { Ionicons } from '@expo/vector-icons'
 
 const HomeStack = createNativeStackNavigator()
 
