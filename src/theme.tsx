@@ -24,7 +24,8 @@ export const navigatorTheme: { dark: Theme; light: Theme } = {
     ...DefaultTheme,
     colors: {
       ...DefaultTheme.colors,
-      primary: twitterBlue
+      primary: twitterBlue,
+      background: '#fff'
     }
   }
 }
